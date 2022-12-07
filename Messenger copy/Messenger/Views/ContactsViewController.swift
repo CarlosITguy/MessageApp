@@ -97,9 +97,7 @@ class ContactsViewController: UIViewController {
         if body != "" {
             ref.child("messages").childByAutoId().setValue(["UID" : "try 1", "body": body, "timestamp": "\(Date())", "username" : "Carlos"])
         }
-        
-        
-        
+
         
 //        self.messages1 = []
         ref
@@ -166,6 +164,7 @@ extension ContactsViewController : UITableViewDataSource{
         guard let cell = contactTable.dequeueReusableCell(withIdentifier: "contactsCell", for: indexPath) as? ContactsTableViewCell else {return UITableViewCell()}
         cell.backgroundColor = .clear
 //        cell.textLabel?.text = "Hola"
+        print(self.messages1[indexPath.row])
         cell.chatMessanges.text = self.messages1[indexPath.row]
         cell.layer.cornerRadius = 100
         return cell
